@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f1ec">
+  <meta name="description" content="Packing checklist for Gavin’s November 1, 2026 Frontier flight to Orlando.">
+  <title>Florida packing</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f3f1ec;
+      --ink: #1c1b19;
+      --muted: #4e4a44;
+      --line: #d8d3cb;
+      --accent: #0f5e59;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.4;
+    }
+
+    .skip {
+      position: absolute;
+      left: 0.75rem;
+      top: -4rem;
+      background: var(--bg);
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      padding: 0.4rem 0.6rem;
+      z-index: 3;
+    }
+
+    .skip:focus { top: 0.5rem; }
+
+    .wrap {
+      width: min(34rem, 100%);
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: var(--bg);
+      padding-top: calc(0.85rem + env(safe-area-inset-top));
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Iowan Old Style", Palatino, "Palatino Linotype", ui-serif, Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    .meta {
+      margin: 0.4rem 0 0;
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+
+    .count {
+      margin: 0.8rem 0 0.45rem;
+      font-size: 0.875rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .bar {
+      height: 3px;
+      background: var(--line);
+    }
+
+    .bar-fill {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--accent);
+    }
+
+    main {
+      padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
+    }
+
+    .tip {
+      margin: 0;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9375rem;
+      line-height: 1.45;
+    }
+
+    .section { margin-top: 1.75rem; }
+
+    .section-label {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .section-count {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .note {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0.45rem 0 0;
+      padding: 0;
+    }
+
+    li { border-top: 1px solid var(--line); }
+    li:last-child { border-bottom: 1px solid var(--line); }
+
+    label {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      min-height: 3.25rem;
+      padding: 0.8rem 0;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    label:active { background: #e8e4dc; }
+
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      margin: 0.05rem 0 0;
+      flex: 0 0 22px;
+      border: 1.5px solid var(--ink);
+      border-radius: 50%;
+      background: transparent;
+      display: grid;
+      place-content: center;
+    }
+
+    input[type="checkbox"]::before {
+      content: "";
+      width: 8px;
+      height: 4px;
+      box-sizing: content-box;
+      border-left: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      transform: rotate(-45deg) translate(1px, -1px);
+    }
+
+    input[type="checkbox"]:checked {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    input[type="checkbox"]:checked::before {
+      border-left-color: #fff;
+      border-bottom-color: #fff;
+    }
+
+    input[type="checkbox"]:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    .is-packed .item-label {
+      color: var(--muted);
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
+
+    .actions { margin-top: 2.25rem; }
+
+    button {
+      appearance: none;
+      width: 100%;
+      min-height: 3rem;
+      margin: 0;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+
+    button:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    button:active {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .footnote {
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+      font-size: 0.8125rem;
+    }
+
+    #save-status:empty { display: none; }
+
+    .noscript {
+      margin: 0.9rem 0 0;
+      font-size: 0.875rem;
+    }
+
+    @media (forced-colors: active) {
+      input[type="checkbox"] {
+        appearance: auto;
+        -webkit-appearance: auto;
+        background: ButtonFace;
+        border-color: ButtonText;
+      }
+
+      input[type="checkbox"]::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#list">Skip to list</a>
+  <header>
+    <div class="wrap">
+      <h1>Florida packing</h1>
+      <p class="meta">Gavin · Sunday, November 1, 2026 · Frontier Airlines<br>Orlando with Mom · Disney, Universal, parks · 2–3 nights · personal item only</p>
+      <p class="count" aria-live="polite"><span id="packed-count">0</span> of <span id="total-count">51</span> packed</p>
+    </div>
+    <div class="bar" id="progress" role="progressbar" aria-label="Packing progress" aria-valuemin="0" aria-valuemax="51" aria-valuenow="0" aria-valuetext="0 of 51 packed">
+      <span class="bar-fill" id="progress-fill"></span>
+    </div>
+  </header>
+  <main class="wrap">
+    <p class="tip">Frontier personal item: 14 in high × 18 in wide × 8 in deep, including handles, wheels, and straps. It must fit under the seat.</p>
+    <noscript><p class="noscript">JavaScript is off, so checkmarks will not be saved.</p></noscript>
+    <div id="list">
+      <section class="section" data-section="clothing" aria-labelledby="clothing-title">
+        <div class="section-label">
+          <h2 id="clothing-title">Clothing</h2>
+          <p class="section-count"><span data-packed>0</span>/<span data-total>13</span></p>
+        </div>
+        <p class="note">Warm days, cold indoor AC. Enough for about 2–3 nights.</p>
+        <ul>
+          <li><label><input type="checkbox" data-id="clothing-polos"><span class="item-label">Polos</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-tees"><span class="item-label">T-shirts</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-khakis"><span class="item-label">Khakis</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-shorts"><span class="item-label">Shorts</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-swim"><span class="item-label">Swim trunks</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-underwear"><span class="item-label">Underwear</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-socks"><span class="item-label">Socks</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-jacket"><span class="item-label">Light jacket or hoodie for AC</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-shoes"><span class="item-label">Comfortable park walking shoes</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-sandals"><span class="item-label">Flip-flops or slides</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-sleep"><span class="item-label">Sleepwear</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-hat"><span class="item-label">Hat (optional)</span></label></li>
+          <li><label><input type="checkbox" data-id="clothing-sunglasses"><span class="item-label">Sunglasses (optional)</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="toiletries" aria-labelledby="toiletries-title">
+        <div class="section-label">
+          <h2 id="toiletries-title">Toiletries</h2>
+          <p class="section-count"><span data-packed>0</span>/<span data-total>8</span></p>
+        </div>
+        <ul>
+          <li><label><input type="checkbox" data-id="toiletries-toothpaste"><span class="item-label">Travel-size toothpaste</span></label></li>
+          <li><label><input type="checkbox" data-id="toiletries-toothbrush"><span class="item-label">Toothbrush</span></label></li>
+          <li><label><input type="checkbox" data-id="toiletries-deodorant"><span class="item-label">Deodorant</span></label></li>
+          <li><label><input type="checkbox" data-id="toiletries-sunscreen"><span class="item-label">Sunscreen</span></label></li>
+          <li><label><input type="checkbox" data-id="toiletries-lipbalm"><span class="item-label">Lip balm</span></label></li>
+          <li><label><input type="checkbox" data-id="toiletries-sanitizer"><span class="item-label">Hand sanitizer</span></label></li>
+          <li><label><input type="checkbox" data-id="toiletries-vision"><span class="item-label">Contacts or glasses, if you use them</span></label></li>
+          <li><label><input type="checkbox" data-id="toiletries-firstaid"><span class="item-label">Small first-aid kit</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="meds" aria-labelledby="meds-title">
+        <div class="section-label">
+          <h2 id="meds-title">Medications</h2>
+          <p class="section-count"><span data-packed>0</span>/<span data-total>4</span></p>
+        </div>
+        <p class="note">Keep this general. Leave drug names off the list.</p>
+        <ul>
+          <li><label><input type="checkbox" data-id="meds-prescriptions"><span class="item-label">Prescription medications</span></label></li>
+          <li><label><input type="checkbox" data-id="meds-pain"><span class="item-label">OTC pain relief</span></label></li>
+          <li><label><input type="checkbox" data-id="meds-allergy"><span class="item-label">OTC allergy relief</span></label></li>
+          <li><label><input type="checkbox" data-id="meds-daily"><span class="item-label">Daily medications</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="electronics" aria-labelledby="electronics-title">
+        <div class="section-label">
+          <h2 id="electronics-title">Electronics</h2>
+          <p class="section-count"><span data-packed>0</span>/<span data-total>6</span></p>
+        </div>
+        <ul>
+          <li><label><input type="checkbox" data-id="electronics-phone"><span class="item-label">Phone</span></label></li>
+          <li><label><input type="checkbox" data-id="electronics-cable"><span class="item-label">Phone charging cable</span></label></li>
+          <li><label><input type="checkbox" data-id="electronics-powerbank"><span class="item-label">Power bank</span></label></li>
+          <li><label><input type="checkbox" data-id="electronics-audio"><span class="item-label">Earbuds or headphones</span></label></li>
+          <li><label><input type="checkbox" data-id="electronics-portable"><span class="item-label">Portable charger brick (optional)</span></label></li>
+          <li><label><input type="checkbox" data-id="electronics-brick"><span class="item-label">Charging brick that fits the personal item</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="documents" aria-labelledby="documents-title">
+        <div class="section-label">
+          <h2 id="documents-title">Documents</h2>
+          <p class="section-count"><span data-packed>0</span>/<span data-total>6</span></p>
+        </div>
+        <ul>
+          <li><label><input type="checkbox" data-id="docs-id"><span class="item-label">Photo ID</span></label></li>
+          <li><label><input type="checkbox" data-id="docs-boarding"><span class="item-label">Boarding pass or Frontier app</span></label></li>
+          <li><label><input type="checkbox" data-id="docs-hotel"><span class="item-label">Hotel confirmation screenshot</span></label></li>
+          <li><label><input type="checkbox" data-id="docs-tickets"><span class="item-label">Park tickets or confirmation screenshots</span></label></li>
+          <li><label><input type="checkbox" data-id="docs-cards"><span class="item-label">Payment cards</span></label></li>
+          <li><label><input type="checkbox" data-id="docs-emergency"><span class="item-label">Emergency contacts note</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="flight" aria-labelledby="flight-title">
+        <div class="section-label">
+          <h2 id="flight-title">Flight</h2>
+          <p class="section-count"><span data-packed>0</span>/<span data-total>4</span></p>
+        </div>
+        <ul>
+          <li><label><input type="checkbox" data-id="flight-offline"><span class="item-label">Shows or playlists downloaded for offline</span></label></li>
+          <li><label><input type="checkbox" data-id="flight-book"><span class="item-label">Book or ebook</span></label></li>
+          <li><label><input type="checkbox" data-id="flight-comfort"><span class="item-label">Neck pillow or eye mask (optional)</span></label></li>
+          <li><label><input type="checkbox" data-id="flight-snacks"><span class="item-label">Snacks that fit TSA rules and the personal item</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="park" aria-labelledby="park-title">
+        <div class="section-label">
+          <h2 id="park-title">Park days</h2>
+          <p class="section-count"><span data-packed>0</span>/<span data-total>5</span></p>
+        </div>
+        <ul>
+          <li><label><input type="checkbox" data-id="park-bottle"><span class="item-label">Refillable water bottle, empty through security</span></label></li>
+          <li><label><input type="checkbox" data-id="park-stick"><span class="item-label">Compact sunscreen stick</span></label></li>
+          <li><label><input type="checkbox" data-id="park-lanyard"><span class="item-label">Portable phone lanyard or strap</span></label></li>
+          <li><label><input type="checkbox" data-id="park-poncho"><span class="item-label">Light rain poncho</span></label></li>
+          <li><label><input type="checkbox" data-id="park-apps"><span class="item-label">Park maps and apps downloaded</span></label></li>
+        </ul>
+      </section>
+
+      <section class="section" data-section="tips" aria-labelledby="tips-title">
+        <div class="section-label">
+          <h2 id="tips-title">Personal item</h2>
+          <p class="section-count"><span data-packed>0</span>/<span data-total>5</span></p>
+        </div>
+        <ul>
+          <li><label><input type="checkbox" data-id="tips-size"><span class="item-label">Bag measured within 14 × 18 × 8 in and 35 lb, straps included</span></label></li>
+          <li><label><input type="checkbox" data-id="tips-liquids"><span class="item-label">Liquids meet TSA 3-1-1: 3.4 oz (100 ml) containers, one quart-size bag</span></label></li>
+          <li><label><input type="checkbox" data-id="tips-valuables"><span class="item-label">Valuables packed in the personal item</span></label></li>
+          <li><label><input type="checkbox" data-id="tips-worn"><span class="item-label">Park shoes and bulkiest layer worn on the plane</span></label></li>
+          <li><label><input type="checkbox" data-id="tips-roll"><span class="item-label">Clothes rolled so the bag fits under the seat</span></label></li>
+        </ul>
+      </section>
+    </div>
+    <div class="actions">
+      <button type="button" id="reset">Reset checklist</button>
+      <p class="footnote" id="save-status" role="status"></p>
+      <p class="footnote">Saved on this device.</p>
+    </div>
+  </main>
+  <script>
+    (function () {
+      "use strict";
+
+      var STORAGE_KEY = "florida-packing-2026-11";
+      var boxes = Array.prototype.slice.call(document.querySelectorAll("input[type=checkbox][data-id]"));
+      var packedEl = document.getElementById("packed-count");
+      var totalEl = document.getElementById("total-count");
+      var fill = document.getElementById("progress-fill");
+      var bar = document.getElementById("progress");
+      var statusEl = document.getElementById("save-status");
+
+      function readState() {
+        try {
+          var raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return {};
+          var data = JSON.parse(raw);
+          if (!data || typeof data !== "object" || Array.isArray(data)) return {};
+          return data;
+        } catch (err) {
+          return {};
+        }
+      }
+
+      function writeState(state) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+          statusEl.textContent = "";
+        } catch (err) {
+          statusEl.textContent = "Could not save on this device. Checks last until you close the tab.";
+        }
+      }
+
+      function collect() {
+        var state = {};
+        boxes.forEach(function (box) {
+          if (box.checked) state[box.dataset.id] = true;
+        });
+        return state;
+      }
+
+      function apply(state) {
+        boxes.forEach(function (box) {
+          box.checked = state[box.dataset.id] === true;
+        });
+      }
+
+      function keys(state) {
+        return Object.keys(state).filter(function (key) { return state[key] === true; }).sort();
+      }
+
+      function same(a, b) {
+        var left = keys(a);
+        var right = keys(b);
+        if (left.length !== right.length) return false;
+        for (var i = 0; i < left.length; i += 1) {
+          if (left[i] !== right[i]) return false;
+        }
+        return true;
+      }
+
+      function render() {
+        var packed = 0;
+        Array.prototype.forEach.call(document.querySelectorAll("[data-section]"), function (section) {
+          var inputs = section.querySelectorAll("input[type=checkbox]");
+          var done = 0;
+          Array.prototype.forEach.call(inputs, function (input) {
+            if (input.checked) done += 1;
+            var row = input.closest("li");
+            if (row) row.classList.toggle("is-packed", input.checked);
+          });
+          packed += done;
+          var packedNode = section.querySelector("[data-packed]");
+          var totalNode = section.querySelector("[data-total]");
+          if (packedNode) packedNode.textContent = String(done);
+          if (totalNode) totalNode.textContent = String(inputs.length);
+        });
+
+        var total = boxes.length;
+        packedEl.textContent = String(packed);
+        totalEl.textContent = String(total);
+        fill.style.width = (total === 0 ? 0 : (packed / total) * 100) + "%";
+        bar.setAttribute("aria-valuemax", String(total));
+        bar.setAttribute("aria-valuenow", String(packed));
+        bar.setAttribute("aria-valuetext", packed + " of " + total + " packed");
+      }
+
+      var stored = readState();
+      apply(stored);
+      var cleaned = collect();
+      if (!same(stored, cleaned)) writeState(cleaned);
+      render();
+
+      document.getElementById("list").addEventListener("change", function (event) {
+        if (!event.target || event.target.type !== "checkbox") return;
+        writeState(collect());
+        render();
+      });
+
+      document.getElementById("reset").addEventListener("click", function () {
+        if (!window.confirm("Reset the checklist? This clears every checkmark saved on this device.")) return;
+        boxes.forEach(function (box) { box.checked = false; });
+        try {
+          localStorage.removeItem(STORAGE_KEY);
+          statusEl.textContent = "";
+        } catch (err) {
+          statusEl.textContent = "Could not clear saved checks in this browser.";
+        }
+        render();
+      });
+
+      window.addEventListener("storage", function (event) {
+        if (event.key !== STORAGE_KEY) return;
+        apply(readState());
+        render();
+      });
+    }());
+  </script>
+</body>
+</html>
