@@ -53,6 +53,7 @@
       top: 0;
       z-index: 2;
       background: var(--bg);
+      border-bottom: 1px solid var(--line);
       padding-top: calc(0.85rem + env(safe-area-inset-top));
     }
 
@@ -72,14 +73,15 @@
     }
 
     .count {
-      margin: 0.8rem 0 0.45rem;
+      margin: 0.8rem 0 0.4rem;
       font-size: 0.875rem;
       font-variant-numeric: tabular-nums;
     }
 
     .bar {
-      height: 3px;
-      background: var(--line);
+      height: 4px;
+      margin: 0 0 0.85rem;
+      background: #c4bdb3;
     }
 
     .bar-fill {
@@ -258,9 +260,9 @@
       <h1>Florida packing</h1>
       <p class="meta">Gavin · Sunday, November 1, 2026 · Frontier Airlines<br>Orlando with Mom · Disney, Universal, parks · 2–3 nights · personal item only</p>
       <p class="count" aria-live="polite"><span id="packed-count">0</span> of <span id="total-count">51</span> packed</p>
-    </div>
-    <div class="bar" id="progress" role="progressbar" aria-label="Packing progress" aria-valuemin="0" aria-valuemax="51" aria-valuenow="0" aria-valuetext="0 of 51 packed">
-      <span class="bar-fill" id="progress-fill"></span>
+      <div class="bar" id="progress" role="progressbar" aria-label="Packing progress" aria-valuemin="0" aria-valuemax="51" aria-valuenow="0" aria-valuetext="0 of 51 packed">
+        <span class="bar-fill" id="progress-fill"></span>
+      </div>
     </div>
   </header>
   <main class="wrap">
